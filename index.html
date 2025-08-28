@@ -14,18 +14,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --brand:#292E37;
-      --accent:#F26D5B;
-      --paper:#FAFAFA;
-      --ink:#0E1116;
-      --muted:#6B7280;
-      --line:#E5E7EB;
-      --card:#0F172A;
-      --card-ink:#E5E7EB;
+      --brand:#292E37;      /* deep slate */
+      --accent:#F26D5B;     /* coral */
+      --paper:#FAFAFA;      /* off-white */
+      --ink:#0E1116;        /* near-black */
+      --muted:#6B7280;      /* grey text */
+      --line:#E5E7EB;       /* light border */
+      --card:#0F172A;       /* dark card */
+      --card-ink:#E5E7EB;   /* card text */
+      --accent-2:#FFD5CD;   /* soft coral tint */
+      --accent-3:#FFEDE9;   /* lighter coral tint */
     }
     body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:var(--paper)}
     a{color:var(--accent);text-decoration:none}
     img{max-width:100%;display:block}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-3);color:var(--accent);padding:.4rem .7rem;border-radius:999px;font-weight:600;font-size:.8rem}
+    .accent-underline{box-shadow:0 -6px 0 inset var(--accent-2)}
+    .section-dark{background:linear-gradient(180deg,#0E1116, #111827);color:#fff}
+    .section-dark h2{color:#fff}
+    .tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+    .tile.dark{background:#0F172A;border-color:#1F2937;color:#E5E7EB}
+    .soft-gradient{background:radial-gradient(1200px 600px at 90% 10%, #FFEDE9 0%, rgba(255,237,233,0) 60%)}
+    .hero-art{position:relative}
+    .hero-art::after{content:"";position:absolute;inset:-8%;background:radial-gradient(600px 400px at 65% 20%, var(--accent-3), transparent 60%);filter:blur(16px);z-index:0}
+    .hero-art > *{position:relative;z-index:1}
+    .logos .logo-tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;transition:transform .2s ease, box-shadow .2s ease}
+    .logos .logo-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(17,24,39,.08)}
+    .cta-band{background:linear-gradient(135deg, #FFEDE9, #fff);padding:56px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cta-band .wrap{max-width:920px;margin:0 auto;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .btn.link{padding:0;border:none}
+    .kicker{letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent);font-size:.75rem}
     .container{max-width:1152px;margin:0 auto;padding:0 20px}
     header{position:sticky;top:0;background:#fffefebf;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
     header .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
@@ -54,8 +72,16 @@
 <body>
   <header>
     <div class="container bar">
-      <a href="#home" aria-label="WeAreCustomr home">
-        <img src="assets/customr-logo.svg" alt="WeAreCustomr" style="height:28px">
+      <a href="#home" aria-label="WeAreCustomr home" style="display:flex;align-items:center;gap:.5rem">
+        <!-- Inline SVG wordmark to mimic WeAreCustomr logo (thin frame with cropped corners + wordmark) -->
+        <svg aria-hidden="true" width="148" height="32" viewBox="0 0 740 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+          <!-- frame with open corners -->
+          <rect x="6" y="6" width="728" height="148" rx="6" stroke="var(--brand)" stroke-width="6"/>
+          <rect x="18" y="18" width="704" height="124" rx="4" stroke="var(--paper)" stroke-width="24"/>
+          <rect x="18" y="18" width="704" height="124" rx="4" stroke="var(--brand)" stroke-width="6"/>
+          <!-- wordmark -->
+          <text x="370" y="102" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-weight="600" font-size="72" fill="var(--brand)">WeAreCustomr</text>
+        </svg>
       </a>
       <nav>
         <a href="#services">Services</a>
@@ -68,17 +94,19 @@
     </div>
   </header>
 
-  <main id="home" class="container">
-    <section class="hero">
+  <main id="home" class="container soft-gradient">
+    <section class="hero" aria-labelledby="h-hero">
       <div>
-        <h1>We are <span style="color:var(--accent)">WeAreCustomr</span> — CRM made simple, growth made repeatable.</h1>
-        <p class="lead">Steph & Soha help retail and ecommerce brands turn first-time buyers into loyal customers through lifecycle CRM. We do the complex CRM work (Email, SMS, Loyalty) so you can focus on your brand.</p>
+        <span class="kicker">Women‑led • CRM Consultancy</span>
+        <h1 id="h-hero">We are <span class="accent-underline">WeAreCustomr</span> — CRM made simple, growth made repeatable.</h1>
+        <p class="lead">Steph & Soha help retail and ecommerce brands turn first‑time buyers into loyal customers through lifecycle CRM. We do the complex CRM work (Email, SMS, Loyalty) so you can focus on your brand.</p>
         <div style="margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap">
           <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Book a Call</a>
           <a class="btn ghost" href="#team">Meet the Founders</a>
+          <span class="badge">Emarsys • Klaviyo • Loyalty</span>
         </div>
       </div>
-      <div>
+      <div class="hero-art">
         <!-- Placeholder founders hero image (replace with real photo later) -->
         <svg role="img" aria-label="Steph & Soha placeholder" viewBox="0 0 800 520" style="width:100%;height:auto;border-radius:16px;background:#F1F5F9">
           <defs>
@@ -88,7 +116,6 @@
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="800" height="520" fill="url(#g)"/>
-          <!-- two circle avatars -->
           <g transform="translate(200,80)">
             <circle cx="120" cy="120" r="90" fill="#D1D5DB"/>
             <rect x="50" y="210" width="140" height="160" rx="12" fill="#D1D5DB"/>
@@ -102,14 +129,14 @@
       </div>
     </section>
 
-    <section id="impact">
-      <h2>Impact</h2>
-      <p class="lead">Real outcomes for our clients — explained in plain English.</p>
+    <section id="impact" class="section-dark" aria-labelledby="h-impact">
+      <h2 id="h-impact">Impact</h2>
+      <p class="lead" style="color:#E5E7EB">Real outcomes for our clients — explained in plain English.</p>
       <div class="impact">
-        <div class="card"><div class="num">+46%</div><div>Email revenue YoY</div></div>
-        <div class="card"><div class="num">20×</div><div>ROI on SMS</div></div>
-        <div class="card"><div class="num">-2%</div><div>Unsub rate</div></div>
-        <div class="card"><div class="num">+34%</div><div>Purchase frequency</div></div>
+        <div class="tile dark"><div class="num" style="color:var(--accent)">+46%</div><div>Email revenue YoY</div></div>
+        <div class="tile dark"><div class="num" style="color:var(--accent)">20×</div><div>ROI on SMS</div></div>
+        <div class="tile dark"><div class="num" style="color:var(--accent)">-2%</div><div>Unsub rate</div></div>
+        <div class="tile dark"><div class="num" style="color:var(--accent)">+34%</div><div>Purchase frequency</div></div>
       </div>
     </section>
 
@@ -117,25 +144,25 @@
       <h2>Trusted by</h2>
       <p class="lead">From Australian fashion icons to household names — brands trust us to grow CRM revenue.</p>
       <div class="logos">
-        <img src="assets/clients/viktoria-and-woods.svg" alt="Viktoria & Woods" loading="lazy">
-        <img src="assets/clients/gazman.svg" alt="Gazman" loading="lazy">
-        <img src="assets/clients/perri-cutten.svg" alt="Perri Cutten" loading="lazy">
-        <img src="assets/clients/cable-melbourne.svg" alt="Cable Melbourne" loading="lazy">
-        <img src="assets/clients/modibodi.svg" alt="Modibodi" loading="lazy">
-        <img src="assets/clients/house.svg" alt="House" loading="lazy">
-        <img src="assets/clients/myhouse.svg" alt="MyHouse" loading="lazy">
-        <img src="assets/clients/robins-kitchen.svg" alt="Robins Kitchen" loading="lazy">
-        <img src="assets/clients/baccarat.svg" alt="Baccarat" loading="lazy">
-        <img src="assets/clients/bessemer.svg" alt="Bessemer" loading="lazy">
-        <img src="assets/clients/therapy-shoes.svg" alt="Therapy Shoes" loading="lazy">
-        <img src="assets/clients/ikou.svg" alt="iKOU" loading="lazy">
+        <div class="logo-tile"><img src="assets/clients/viktoria-and-woods.svg" alt="Viktoria & Woods"></div>
+        <div class="logo-tile"><img src="assets/clients/gazman.svg" alt="Gazman"></div>
+        <div class="logo-tile"><img src="assets/clients/perri-cutten.svg" alt="Perri Cutten"></div>
+        <div class="logo-tile"><img src="assets/clients/cable-melbourne.svg" alt="Cable Melbourne"></div>
+        <div class="logo-tile"><img src="assets/clients/modibodi.svg" alt="Modibodi"></div>
+        <div class="logo-tile"><img src="assets/clients/house.svg" alt="House"></div>
+        <div class="logo-tile"><img src="assets/clients/myhouse.svg" alt="MyHouse"></div>
+        <div class="logo-tile"><img src="assets/clients/robins-kitchen.svg" alt="Robins Kitchen"></div>
+        <div class="logo-tile"><img src="assets/clients/baccarat.svg" alt="Baccarat"></div>
+        <div class="logo-tile"><img src="assets/clients/bessemer.svg" alt="Bessemer"></div>
+        <div class="logo-tile"><img src="assets/clients/therapy-shoes.svg" alt="Therapy Shoes"></div>
+        <div class="logo-tile"><img src="assets/clients/ikou.svg" alt="iKOU"></div>
       </div>
       <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">Previously: Catchy, The DOM</p>
     </section>
 
     <section id="team">
       <h2>Meet the Founders</h2>
-      <p class="lead">WeAreCustomr is led by <strong>Steph Mitchell</strong> & <strong>Soha Hosseini</strong> — pragmatic, data-led CRM consultants who prefer candour over fluff. We bring female leadership, perspective, and empathy to a space often dominated by jargon and tech-speak.</p>
+      <p class="lead">WeAreCustomr is led by <strong>Steph Mitchell</strong> & <strong>Soha Hosseini</strong> — pragmatic, data‑led CRM consultants who prefer candour over fluff. We bring female leadership, perspective, and empathy to a space often dominated by jargon and tech‑speak.</p>
       <div class="founders">
         <div class="founder">
           <!-- circular placeholder avatar -->
@@ -144,7 +171,7 @@
             <rect x="45" y="128" width="130" height="70" rx="12" fill="#D1D5DB"/>
           </svg>
           <h3>Steph Mitchell</h3>
-          <p class="desc">CRM strategist specializing in lifecycle journeys that drive revenue and loyalty. Known for translating complex platforms into simple, actionable programs.</p>
+          <p class="desc">CRM strategist obsessed with lifecycle journeys that drive revenue and loyalty. Known for translating complex platforms into simple, actionable programs.</p>
         </div>
         <div class="founder">
           <svg role="img" aria-label="Soha placeholder" viewBox="0 0 220 220" class="avatar" style="width:180px;height:180px;margin:0 auto 12px;display:block">
@@ -158,26 +185,35 @@
     </section>
 
     <!-- ===== Handoff Notes (for implementer) =====
+      * Replace inline SVG logo with brand asset if preferred. The SVG mimics a thin frame + wordmark.
       * Swap placeholder hero SVG with final founders photo. Suggested path: assets/team-soha-steph.jpg
       * Team avatars use inline SVG placeholders; replace with assets/team-steph.jpg & assets/team-soha.jpg
       * Client logos expected in assets/clients/*.svg (greyscale applied via CSS)
     -->
 
-    <section id="pillars">
-      <h2>Our Pillars</h2>
+    <section id="pillars" aria-labelledby="h-pillars">
+      <h2 id="h-pillars">Our Pillars</h2>
       <div class="impact" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-        <div class="card"><strong>Platform-neutral</strong><br>We recommend what works, not what pays us.</div>
-        <div class="card"><strong>Train & Document</strong><br>We leave you smarter, not dependent.</div>
-        <div class="card"><strong>Your Data First</strong><br>Your customer reality drives the plan.</div>
-        <div class="card"><strong>Actionable, not theoretical</strong><br>You get practical steps that pay back.</div>
-        <div class="card"><strong>Candour always</strong><br>If it won’t work, we’ll tell you straight.</div>
+        <div class="tile" style="border-top:4px solid var(--accent)"><strong>Platform‑neutral</strong><br>We recommend what works, not what pays us.</div>
+        <div class="tile" style="border-top:4px solid var(--accent)"><strong>Train & Document</strong><br>We leave you smarter, not dependent.</div>
+        <div class="tile" style="border-top:4px solid var(--accent)"><strong>Your Data First</strong><br>Your customer reality drives the plan.</div>
+        <div class="tile" style="border-top:4px solid var(--accent)"><strong>Actionable, not theoretical</strong><br>You get practical steps that pay back.</div>
+        <div class="tile" style="border-top:4px solid var(--accent)"><strong>Candour always</strong><br>If it won’t work, we’ll tell you straight.</div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Let’s Talk</h2>
-      <p class="lead">We’ll listen first. You talk, we’ll take notes — then show you the fastest path to impact.</p>
-      <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Talk with Steph & Soha</a>
+    <section class="cta-band" aria-labelledby="h-cta">
+      <div class="wrap">
+        <div>
+          <div class="kicker">Next step</div>
+          <h2 id="h-cta" style="margin:.35rem 0 0">Let’s talk about your repeat revenue</h2>
+          <p class="lead" style="max-width:56ch;margin-top:.35rem">We’ll listen first. You talk, we’ll take notes — then show you the fastest path to impact.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;align-items:center">
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Talk with Steph & Soha</a>
+          <a class="btn link" href="#team">Meet the founders →</a>
+        </div>
+      </div>
     </section>
   </main>
 
