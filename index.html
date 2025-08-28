@@ -54,7 +54,17 @@
 <body>
   <header>
     <div class="container bar">
-      <a href="#home"><img src="assets/customr-logo.png" alt="WeAreCustomr" style="height:28px"></a>
+      <a href="#home" aria-label="WeAreCustomr home" style="display:flex;align-items:center;gap:.5rem">
+        <!-- Inline SVG wordmark to mimic WeAreCustomr logo (thin frame with cropped corners + wordmark) -->
+        <svg aria-hidden="true" width="148" height="32" viewBox="0 0 740 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+          <!-- frame with open corners -->
+          <rect x="6" y="6" width="728" height="148" rx="6" stroke="var(--brand)" stroke-width="6"/>
+          <rect x="18" y="18" width="704" height="124" rx="4" stroke="var(--paper)" stroke-width="24"/>
+          <rect x="18" y="18" width="704" height="124" rx="4" stroke="var(--brand)" stroke-width="6"/>
+          <!-- wordmark -->
+          <text x="370" y="102" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-weight="600" font-size="72" fill="var(--brand)">WeAreCustomr</text>
+        </svg>
+      </a>
       <nav>
         <a href="#services">Services</a>
         <a href="#impact">Impact</a>
@@ -77,7 +87,26 @@
         </div>
       </div>
       <div>
-        <img src="assets/team-soha-steph.jpg" alt="Steph & Soha" style="border-radius:16px;filter:grayscale(100%)">
+        <!-- Placeholder founders hero image (replace with real photo later) -->
+        <svg role="img" aria-label="Steph & Soha placeholder" viewBox="0 0 800 520" style="width:100%;height:auto;border-radius:16px;background:#F1F5F9">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E5E7EB"/>
+              <stop offset="100%" stop-color="#CBD5E1"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="800" height="520" fill="url(#g)"/>
+          <!-- two circle avatars -->
+          <g transform="translate(200,80)">
+            <circle cx="120" cy="120" r="90" fill="#D1D5DB"/>
+            <rect x="50" y="210" width="140" height="160" rx="12" fill="#D1D5DB"/>
+          </g>
+          <g transform="translate(420,80)">
+            <circle cx="120" cy="120" r="90" fill="#D1D5DB"/>
+            <rect x="50" y="210" width="140" height="160" rx="12" fill="#D1D5DB"/>
+          </g>
+          <text x="400" y="490" text-anchor="middle" font-size="26" fill="#64748B" font-family="Inter, system-ui">Steph & Soha — Founders</text>
+        </svg>
       </div>
     </section>
 
@@ -117,17 +146,31 @@
       <p class="lead">WeAreCustomr is led by <strong>Steph Mitchell</strong> & <strong>Soha Hosseini</strong> — pragmatic, data‑led CRM consultants who prefer candour over fluff. We bring female leadership, perspective, and empathy to a space often dominated by jargon and tech‑speak.</p>
       <div class="founders">
         <div class="founder">
-          <img src="assets/team-steph.jpg" alt="Steph Mitchell">
+          <!-- circular placeholder avatar -->
+          <svg role="img" aria-label="Steph placeholder" viewBox="0 0 220 220" class="avatar" style="width:180px;height:180px;margin:0 auto 12px;display:block">
+            <circle cx="110" cy="76" r="50" fill="#D1D5DB"/>
+            <rect x="45" y="128" width="130" height="70" rx="12" fill="#D1D5DB"/>
+          </svg>
           <h3>Steph Mitchell</h3>
-          <p class="desc">CRM strategist obsessed with lifecycle journeys that drive revenue and loyalty. Known for translating complex platforms into simple, actionable programs.</p>
+          <p class="desc">CRM strategist specializing in lifecycle journeys that drive revenue and loyalty. Known for translating complex platforms into simple, actionable programs.</p>
         </div>
         <div class="founder">
-          <img src="assets/team-soha.jpg" alt="Soha Hosseini">
+          <svg role="img" aria-label="Soha placeholder" viewBox="0 0 220 220" class="avatar" style="width:180px;height:180px;margin:0 auto 12px;display:block">
+            <circle cx="110" cy="76" r="50" fill="#D1D5DB"/>
+            <rect x="45" y="128" width="130" height="70" rx="12" fill="#D1D5DB"/>
+          </svg>
           <h3>Soha Hosseini</h3>
-          <p class="desc">Data‑driven consultant with 10+ years across client and agency side. Passionate about fixing messy data and building programs that actually deliver results.</p>
+          <p class="desc">Data-driven consultant with 10+ years across client and agency side. Passionate about fixing messy data and building programs that actually deliver results.</p>
         </div>
       </div>
     </section>
+
+    <!-- ===== Handoff Notes (for implementer) =====
+      * Replace inline SVG logo with brand asset if preferred. The SVG mimics a thin frame + wordmark.
+      * Swap placeholder hero SVG with final founders photo. Suggested path: assets/team-soha-steph.jpg
+      * Team avatars use inline SVG placeholders; replace with assets/team-steph.jpg & assets/team-soha.jpg
+      * Client logos expected in assets/clients/*.svg (greyscale applied via CSS)
+    -->
 
     <section id="pillars">
       <h2>Our Pillars</h2>
