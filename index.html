@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Customr — Lifecycle CRM for Retail & Ecommerce</title>
+  <title>WeAreCustomr — Lifecycle CRM for Retail & Ecommerce</title>
   <meta name="description" content="We fix data hygiene, audit history end‑to‑end, and implement high‑impact CRM changes to grow repeat revenue via Email, SMS & Loyalty on Emarsys, Klaviyo, and more." />
-  <meta property="og:title" content="Customr — Lifecycle CRM for Retail & Ecommerce" />
+  <meta property="og:title" content="WeAreCustomr — Lifecycle CRM for Retail & Ecommerce" />
   <meta property="og:description" content="We fix data hygiene, audit history end‑to‑end, and implement high‑impact CRM changes to grow repeat revenue via Email, SMS & Loyalty on Emarsys, Klaviyo, and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.wearecustomr.com.au/" />
@@ -81,7 +81,11 @@
     @media (max-width: 520px){ .steps{grid-template-columns:1fr}}
 
     /* Logos row */
-    .logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:center;opacity:.8}
+    .logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:center;opacity:.95}
+    .logos img{max-height:44px;width:auto;margin:0 auto;filter:grayscale(100%);opacity:.8}
+    .logos img:hover{opacity:1}
+    .logo-box{border:1px solid var(--line);border-radius:12px;padding:10px;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;font-weight:700;color:#9CA3AF}
+    @media (max-width: 980px){ .logos{grid-template-columns:repeat(3,minmax(0,1fr))} }
     .logo-box{border:1px solid var(--line);border-radius:12px;padding:10px;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;font-weight:700;color:#9CA3AF}
     @media (max-width: 980px){ .logos{grid-template-columns:repeat(3,minmax(0,1fr))} }
 
@@ -96,15 +100,16 @@
 <body>
   <header class="site">
     <div class="container bar">
-      <a class="logo" href="#home" aria-label="Customr home">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Customr</span>
+      <a class="logo" href="#home" aria-label="WeAreCustomr home">
+        <img src="assets/customr-logo.png" alt="WeAreCustomr" style="height:28px;width:auto;display:block"/>
       </a>
       <nav aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#approach">Approach</a>
+        <a href="#pillars">Pillars</a>
         <a href="#clients">Clients</a>
+        <a href="#team">Team</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -131,6 +136,7 @@
         <div class="cta">
           <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Book a discovery call</a>
           <a class="btn ghost" href="#work">View our work</a>
+          <a class="btn ghost" href="#team">We are WeAreCustomr →</a>
         </div>
         <div class="badges" aria-label="Highlights">
           <span class="chip">Emarsys & Klaviyo</span>
@@ -197,35 +203,64 @@
       </div>
     </section>
 
+    <section id="pillars" aria-labelledby="h-pillars">
+      <h2 id="h-pillars">Our pillars</h2>
+      <div class="grid cols-3" style="margin-top:16px">
+        <div class="card"><div class="title">Technology‑agnostic</div><p class="desc">We recommend what fits your stack and goals — no hidden agendas, just the best option for your needs.</p></div>
+        <div class="card"><div class="title">Train & document</div><p class="desc">We upskill your team with docs, videos, and sessions so you can own the outcomes — doing ourselves out of a job.</p></div>
+        <div class="card"><div class="title">Lead with your data</div><p class="desc">Industry context helps, but your data decides. We tailor strategy and execution to your customers and realities.</p></div>
+        <div class="card"><div class="title">Actionable over ideal</div><p class="desc">We balance ambition with constraints — budgets, resourcing, and timing — to deliver usable, phased actions.</p></div>
+        <div class="card"><div class="title">Candour over comfort</div><p class="desc">We’re not "yes" people. If an option won’t pay back, we’ll say so and guide you to the path that will.</p></div>
+      </div>
+    </section>
+
     <section id="clients" aria-labelledby="h-clients">
       <h2 id="h-clients">Trusted by</h2>
       <p class="lead">Replace with approved client logos. Use greyscale for a clean, consistent feel.</p>
       <div class="logos" style="margin-top:12px">
-        <div class="logo-box">Viktoria & Woods</div>
-        <div class="logo-box">Gazman</div>
-        <div class="logo-box">Perri Cutten</div>
-        <div class="logo-box">Cable Melbourne</div>
-        <div class="logo-box">Modibodi</div>
-        <div class="logo-box">GRB: House</div>
-        <div class="logo-box">GRB: MyHouse</div>
-        <div class="logo-box">GRB: Robins Kitchen</div>
-        <div class="logo-box">GRB: Baccarat</div>
-        <div class="logo-box">GRB: Bessemer</div>
-        <div class="logo-box">Therapy Shoes</div>
-        <div class="logo-box">iKOU</div>
-        <div class="logo-box">Australian Venues Co</div>
-        <div class="logo-box">Catchy (prev)</div>
-        <div class="logo-box">The DOM (prev)</div>
+        <img src="assets/clients/viktoria-and-woods.svg" alt="Viktoria & Woods logo">
+        <img src="assets/clients/gazman.svg" alt="Gazman logo">
+        <img src="assets/clients/perri-cutten.svg" alt="Perri Cutten logo">
+        <img src="assets/clients/cable-melbourne.svg" alt="Cable Melbourne logo">
+        <img src="assets/clients/modibodi.svg" alt="Modibodi logo">
+        <img src="assets/clients/house.svg" alt="House logo">
+        <img src="assets/clients/myhouse.svg" alt="MyHouse logo">
+        <img src="assets/clients/robins-kitchen.svg" alt="Robins Kitchen logo">
+        <img src="assets/clients/baccarat.svg" alt="Baccarat logo">
+        <img src="assets/clients/bessemer.svg" alt="Bessemer logo">
+        <img src="assets/clients/therapy-shoes.svg" alt="Therapy Shoes logo">
+        <img src="assets/clients/ikou.svg" alt="iKOU logo">
+      </div>
+    </section>
+
+    <section id="team" aria-labelledby="h-team">
+      <h2 id="h-team">Team</h2>
+      <p class="lead">WeAreCustomr is led by Soha Hosseini and Stephanie Mitchell — pragmatic, data‑led CRM consultants who prefer candour over fluff.</p>
+      <div class="card" style="margin-top:12px">
+        <img src="assets/team-soha-steph.jpg" alt="Soha Hosseini and Stephanie Mitchell" style="width:100%;height:auto;display:block;filter:grayscale(100%)"/>
+        <p class="desc" style="margin-top:.75rem">Placeholder image for proposal purposes. We’ll replace with final portraits after the photoshoot.</p>
       </div>
     </section>
 
     <section id="about" aria-labelledby="h-about">
       <h2 id="h-about">About Customr</h2>
-      <p class="lead">We’re a specialist CRM team helping Australian retail and ecommerce brands convert more first‑timers into loyal fans. We partner closely with in‑house marketers to build sustainable channel growth.</p>
+      <p class="lead">We started client‑side, seeing firsthand how data‑led decisions and clear customer strategy transform outcomes. Customr exists to turn a wishy‑washy customer space into an objective‑driven, commercially grounded practice that compounds retention and growth.</p>
       <div class="grid cols-3" style="margin-top:16px">
-        <div class="card"><div class="title">Platforms</div><p class="desc">Emarsys, Klaviyo, GA4, Google Tag Manager, HubSpot (CRM setup), and more.</p></div>
-        <div class="card"><div class="title">Ways of working</div><p class="desc">Project sprints or retained support with clear roadmaps and measurable targets.</p></div>
-        <div class="card"><div class="title">Where we operate</div><p class="desc">Australia‑first with distributed delivery across time zones.</p></div>
+        <div class="card"><div class="title">Why trust us</div><p class="desc">Enterprise and mid‑market experience across AU/NZ, delivered with candour and a focus on business value — not vanity outputs.</p></div>
+        <div class="card"><div class="title">How we partner</div><p class="desc">We dig into the details, present the best options for the long‑term, and align recommendations to ROI and practicality.</p></div>
+        <div class="card"><div class="title">Where we help</div><p class="desc">CRM strategy, insights, loyalty programs, and the technology to execute — end‑to‑end.</p></div>
+      </div>
+    </section>
+
+    <section id="team" aria-labelledby="h-team">
+      <h2 id="h-team">Our Team</h2>
+      <p class="lead">WeAreCustomr is led by experienced CRM specialists who have sat client‑side and understand the realities of retail and ecommerce.</p>
+      <div class="grid cols-2" style="margin-top:16px;align-items:start">
+        <div class="card" style="text-align:center">
+          <img src="assets/team/soha-steph-placeholder.png" alt="Soha and Steph — WeAreCustomr" style="width:100%;max-width:360px;margin:0 auto;border-radius:16px;filter:grayscale(100%)" />
+          <div class="title" style="margin-top:12px">Soha Hosseini &amp; Stephanie Mitchell</div>
+          <p class="desc">Founders &amp; CRM Specialists</p>
+        </div>
       </div>
     </section>
 
@@ -256,7 +291,7 @@
 
   <footer>
     <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
-      <div>© <span id="year"></span> Customr. All rights reserved.</div>
+      <div>© <span id="year"></span> WeAreCustomr. All rights reserved.</div>
       <div style="display:flex;gap:16px">
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
